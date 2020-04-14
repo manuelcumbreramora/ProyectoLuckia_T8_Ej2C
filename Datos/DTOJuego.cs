@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace Datos
 {
-    public class Class1
+    public class DTOJuego
     {
+        public int Id { get; set; }
+
+        public String Nombre { get; set; }
+
+        public int Tipo { get; set; }
     }
 }
