@@ -129,6 +129,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\mApuestas.cs" />
     <Compile Include="Models\mEventos.cs" />
     <Compile Include="Models\mJuegos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
