@@ -8,6 +8,6 @@ namespace Datos
 {
     public interface IDAOJuego
     {
-        List<DTOApuesta> ListarTodosJuegos();
+        List<DTOJuego> ListarTodosJuegos();
     }
 }
