@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Negocio
 {
+    //
     public class Apuesta
     {
         public int Id { get; set; }
