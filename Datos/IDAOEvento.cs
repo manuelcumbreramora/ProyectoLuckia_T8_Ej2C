@@ -8,6 +8,6 @@ namespace Datos
 {
     public interface IDAOEvento
     {
-        List<DTOApuesta> ListarTodosEventos();
+        List<DTOEvento> ListarTodosEventos();
     }
 }
