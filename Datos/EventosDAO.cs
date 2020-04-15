@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 
@@ -13,9 +14,10 @@ namespace Datos
         {
             string queryString = "SELECT Id, nombre, fecha, cuota, mercado, juego FROM eventos ORDER BY DATE ASC;";
 
+            List<DTOEvento> eventosList;
             using (SqlConnection dbConnection = new SqlConnection(AbstractDAO.DB_CONNECTION_STRING))
             {
-                List<DTOEvento> eventosList = new List<DTOEvento>();
+                eventosList = new List<DTOEvento>();
 
                 SqlCommand command = new SqlCommand(queryString, dbConnection);
                 dbConnection.Open();
@@ -23,7 +25,7 @@ namespace Datos
                 {
                     while (reader.Read())
                     {
-                        string _Id = reader.GetInt32(0);
+                        int _Id = reader.GetInt32(0);
                         string _Nombre = reader.GetString(1);
                         DateTime _Fecha = reader.GetDateTime(2);
                         double _Cuota = reader.GetDouble(3);
@@ -35,7 +37,7 @@ namespace Datos
                             Id = _Id, 
                             Nombre = _Nombre,
                             Fecha = _Fecha,
-                            Cuota = _Cuota, 
+                            Cuota = (float)_Cuota, 
                             Mercado = _Mercado,
                             IdJuego = _IdJuego
                         });
@@ -50,9 +52,10 @@ namespace Datos
         {
             string queryString = "SELECT Id, nombre, fecha, cuota, mercado, juego FROM eventos WHERE juego = idJuego ORDER BY DATE ASC;";
 
+            List<DTOEvento> eventosList;
             using (SqlConnection dbConnection = new SqlConnection(AbstractDAO.DB_CONNECTION_STRING))
             {
-                List<DTOEvento> eventosList = new List<DTOEvento>();
+                eventosList = new List<DTOEvento>();
 
                 SqlCommand command = new SqlCommand(queryString, dbConnection);
                 dbConnection.Open();
@@ -60,7 +63,7 @@ namespace Datos
                 {
                     while (reader.Read())
                     {
-                        string _Id = reader.GetInt32(0);
+                        int _Id = reader.GetInt32(0);
                         string _Nombre = reader.GetString(1);
                         DateTime _Fecha = reader.GetDateTime(2);
                         double _Cuota = reader.GetDouble(3);
@@ -72,7 +75,7 @@ namespace Datos
                             Id = _Id,
                             Nombre = _Nombre,
                             Fecha = _Fecha,
-                            Cuota = _Cuota,
+                            Cuota = (float)_Cuota,
                             Mercado = _Mercado,
                             IdJuego = _IdJuego
                         });
@@ -80,7 +83,7 @@ namespace Datos
                 }
             }
 
-            return (eventosList.Count > 0) ? eventosList.get(0) : null;
+            return (eventosList.Count > 0) ? eventosList.First() : null;
         }
     }
 }

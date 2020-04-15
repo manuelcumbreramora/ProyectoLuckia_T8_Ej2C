@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 
@@ -13,10 +14,12 @@ namespace Datos
         {
             string queryString = "SELECT id, jugador, fecha, cantidad, id_juego FROM apuestas ORDER BY id ASC;";
 
+            List<DTOApuesta> apuestasList;
+
             using (SqlConnection dbConnection = new SqlConnection(AbstractDAO.DB_CONNECTION_STRING))
             {
                 dbConnection.Open();
-                List<DTOApuesta> apuestasList = new List<DTOApuesta>();
+                apuestasList = new List<DTOApuesta>();
 
                 SqlCommand command = new SqlCommand(queryString, dbConnection);
                 using (var reader = command.ExecuteReader())
@@ -29,12 +32,12 @@ namespace Datos
                         double _Cantidad = reader.GetDouble(2);
                         int _IdJuego = reader.GetInt32(3);
 
-                        apuestasList.Add(new ApuestaDTO
+                        apuestasList.Add(new DTOApuesta()
                         {
                             Id = _Id,
-                            Jugador = _Jugador,
+                            IdUsuario = _Jugador,
                             Fecha = _Fecha,
-                            Cantidad = _Cantidad,
+                            Importe = (float)_Cantidad,
                             IdJuego = _IdJuego
                         });
                     }

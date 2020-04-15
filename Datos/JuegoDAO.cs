@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 
@@ -13,9 +14,10 @@ namespace Datos
         {
             string queryString = "SELECT id, nombre, tipo FROM juegos ORDER BY id ASC;";
 
+            List<DTOJuego> juegosList;
             using (SqlConnection dbConnection = new SqlConnection(AbstractDAO.DB_CONNECTION_STRING))
             {
-                List<DTOJuego> juegosList = new List<DTOJuego>();
+                juegosList = new List<DTOJuego>();
 
                 SqlCommand command = new SqlCommand(queryString, dbConnection);
 
@@ -26,7 +28,7 @@ namespace Datos
                     {
                         int _Id = reader.GetInt32(0);
                         string _Nombre = reader.GetString(1);
-                        string _Tipo = reader.GetString(2);
+                        int _Tipo = reader.GetInt32(2);
 
                         juegosList.Add(new DTOJuego
                         {
@@ -38,7 +40,7 @@ namespace Datos
                 }
             }
 
-            return juegoList;
+            return juegosList;
         }
     }
 }
