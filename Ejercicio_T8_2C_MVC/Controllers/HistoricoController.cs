@@ -16,7 +16,7 @@ namespace Ejercicio_T8_2C_MVC.Controllers
 
             //Recojo datos y lo paso a presentacion
 
-            List<Models.mApuestas> listaApuestas;
+            //List<Models.mApuestas> listaApuestas;
 
             //        using (EntidadDatos ed = new EntidadDatos()) {
 
