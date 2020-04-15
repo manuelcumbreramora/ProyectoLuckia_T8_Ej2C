@@ -9,6 +9,7 @@ namespace Datos
     public interface IDAOEvento
     {
         List<DTOEvento> ListarTodosEventos();
-        int ObtenerUltimoEvento(int idJuego);
+
+        DTOEvento ObtenerUltimoEvento(int idJuego);
     }
 }
