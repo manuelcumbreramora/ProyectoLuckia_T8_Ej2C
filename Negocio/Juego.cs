@@ -8,6 +8,7 @@ namespace Negocio
 {
     public class Juego
     {
+        //
         public int Id { get; set; }
 
         public String Nombre { get; set; }
