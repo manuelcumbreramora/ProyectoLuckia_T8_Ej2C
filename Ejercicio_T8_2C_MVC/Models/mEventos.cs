@@ -7,12 +7,17 @@ namespace Ejercicio_T8_2C_MVC.Models
 {
     public class mEventos
     {
-      
-            public int ID { get; set; }
-            public string nombre { get; set; }
-            public double? cuota { get; set; }
-            public DateTime? fecha { get; set; }
-            public int? idJuego { get; set; }
+
+        public int Id;
+        public String Nombre { get; set; }
+
+        public DateTime Fecha { get; set; }
+
+        public float Cuota { get; set; }
+
+        public String Mercado { get; set; }
+
+        public int IdJuego { get; set; }
 
 
     }
