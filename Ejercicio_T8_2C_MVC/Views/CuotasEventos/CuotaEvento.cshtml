@@ -3,15 +3,16 @@
     ViewBag.Title = "CuotaEvento";
 }
 
-<h2>Cuotas y Evento</h2>
+<h2>Cuotas y Eventos</h2>
 
 
 <div class="row">
 
-    <div class="col-md-12">
+    <div class="col-md-6">
         <table class="table">
             <tr>
                 <th>#</th>
+                <th>Id</th>
                 <th>Nombre</th>
                 <th>Fecha</th>
                 <th>Cuota</th>
@@ -23,6 +24,7 @@
             @*@foreach (var Elemento in Model)
                 {
         <tr>
+            <td>@Elemento.Id</td>
             <td>@Elemento.Nombre</td>
             <td>@Elemento.Fecha</td>
             <td>@Elemento.Cuota</td>
@@ -31,8 +33,23 @@
 
                 }*@
 
+
+
         </table>
 
+
+
+
+
+    </div>
+    <div class="row" style="text-align:right;padding:5px">
+
+        
+        <div class="row" style="text-align:right;padding:5px">
+            <label>Id Evento :</label>
+            <a><input type="text" id="txtEvento" name="textCantidad"></a>
+        </div>
+        <button type="button" class="btn btn-primary pull-right" style="margin-left:10px" onclick="ModificarEvento(document.getElementById('txtEvento').value)">Modificar Evento</button>
     </div>
 </div>
 
