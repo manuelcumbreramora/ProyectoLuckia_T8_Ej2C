@@ -8,7 +8,7 @@ namespace Ejercicio_T8_2C_MVC.DAO
     public class ApuestasDAO : AbstractDAO, IDAOApuesta
     {
         public ApuestasDAO() { }
-        // jugador, juego, fecha, cantidad
+
         public List<DTOApuesta> ListarTodasApuestas()
         {
             string queryString = "SELECT id, jugador, fecha, cantidad, id_juego FROM apuestas ORDER BY id ASC;";
