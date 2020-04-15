@@ -4,17 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Datos
+namespace Negocio
 {
-   public class DTOApuesta
+    public class Apuesta
     {
         public int Id { get; set; }
 
-        public int Jugador { get; set; }
+        public String Usuario { get; set; }
 
         public DateTime Fecha { get; set; }
-
-        public double Cantidad { get; set; }
 
         public int IdJuego { get; set; }
     }

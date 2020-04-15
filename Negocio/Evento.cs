@@ -4,19 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Datos
+namespace Negocio
 {
-    public class DTOEvento
+    public class Evento
     {
         public int Id;
+        public String Nombre { get; set; }
 
-        public string Nombre { get; set; }
-        
         public DateTime Fecha { get; set; }
 
         public float Cuota { get; set; }
 
-        public string Mercado { get; set; }
+        public String Mercado { get; set; }
 
         public int IdJuego { get; set; }
     }
