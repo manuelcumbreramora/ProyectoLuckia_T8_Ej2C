@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 namespace Negocio
 {
-    //
     public class FachadaNegocio
     {
         private IDAOApuesta DAOApuestas = new DAOApuestasImpl();
@@ -60,6 +59,25 @@ namespace Negocio
                 });
             });
             return listaJuegos;
+        }
+
+        /*
+         * Este es el método que se debería llamar desde Casino 
+         */
+        public void RegistrarApuestas(int idJugador, List<Tuple<int, float>> apuestas)
+        {
+            List<int> idsApuestas = new List<int>();
+
+            apuestas.ForEach(delegate (Tuple<int, float> tupla)
+            {
+                DTOApuesta apuesta=new DTOApuesta();
+                apuesta.Id = 0;
+                apuesta.IdJuego = tupla.Item1;
+                apuesta.Importe = tupla.Item2;
+                apuesta.IdUsuario = idJugador;
+
+                DAOApuestas.Insertar(apuesta);
+            });
         }
     }
 }
