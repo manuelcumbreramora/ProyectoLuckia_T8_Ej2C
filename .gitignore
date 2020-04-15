@@ -1,0 +1,16 @@
+﻿################################################################################
+# Este archivo .gitignore ha sido creado automáticamente por Microsoft(R) Visual Studio.
+################################################################################
+
+/Datos/bin
+/Datos/obj
+/.vs
+/Ejercicio_T8_2C_MVC/bin
+/Ejercicio_T8_2C_MVC/obj
+/Negocio/bin
+/Negocio/obj
+/packages
+Ejercicio_T8_2C_MVC/obj/Debug/Ejercicio_T8_2C_MVC.csproj.CoreCompileInputs.cache
+*.dll
+Ejercicio_T8_2C_MVC/obj/Debug/Ejercicio_T8_2C_MVC.pdb
+Ejercicio_T8_2C_MVC/obj/Debug/Ejercicio_T8_2C_MVC.pdb

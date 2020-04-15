@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Ejercicio_T8_2C_MVC.Models
+namespace Datos
 {
-    public class mApuestas
+   public class DTOApuesta
     {
         public int Id { get; set; }
 
