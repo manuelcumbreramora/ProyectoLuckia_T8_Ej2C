@@ -47,7 +47,7 @@
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Negocio">
-      <HintPath>..\Negocio\bin\Debug\Negocio.dll</HintPath>
+      <HintPath>..\Negocio\obj\Debug\Negocio.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />

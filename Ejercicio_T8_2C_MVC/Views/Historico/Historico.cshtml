@@ -17,12 +17,16 @@
                 <th>Cantidad</th>
             </tr>
 
-            
+            @*Recojo lista para ccargar en la tabla*@
 
             @*@foreach (var Elemento in Model)
                 {
-                    <tr>
-                    </tr>
+        <tr>
+            <td>@Elemento.Id</td>
+            <td>@Elemento.Fecha</td>
+            <td>@Elemento.Cantidad</td>
+
+        </tr>
 
                 }*@
 

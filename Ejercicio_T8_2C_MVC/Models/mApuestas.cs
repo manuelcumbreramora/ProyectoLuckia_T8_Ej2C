@@ -14,5 +14,7 @@ namespace Ejercicio_T8_2C_MVC.Models
         public DateTime Fecha { get; set; }
 
         public int IdJuego { get; set; }
+
+        public double cantidad { get; set; }
     }
 }

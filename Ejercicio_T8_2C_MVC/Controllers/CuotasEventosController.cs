@@ -9,9 +9,10 @@ namespace Ejercicio_T8_2C_MVC.Controllers
     public class CuotasEventosController : Controller
     {
         // GET: CuotasEventos
+        List<Models.mEventos> listaEventos;
         public ActionResult CuotaEvento()
         {
-            return View();
+            return View(listaEventos);
         }
 
        
