@@ -9,11 +9,11 @@ namespace Ejercicio_T8_2C_MVC.Controllers
 {
     public class ApuestaController : Controller
     {
-        List<Models.mApuestas> listaApuestas;
+        //List<Models.mApuestas> listaApuestas;
         // GET: Apuesta
         public ActionResult Apuesta()
         {
-            return View(listaApuestas);
+            return View();
         }
 
  
