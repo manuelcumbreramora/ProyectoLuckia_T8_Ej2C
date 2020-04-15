@@ -43,7 +43,6 @@
   <ItemGroup>
     <Compile Include="AbstractDAO.cs" />
     <Compile Include="ApuestasDAO.cs" />
-    <Compile Include="PruebaDatos.cs" />
     <Compile Include="DTOEvento.cs" />
     <Compile Include="DTOApuesta.cs" />
     <Compile Include="DTOJuego.cs" />

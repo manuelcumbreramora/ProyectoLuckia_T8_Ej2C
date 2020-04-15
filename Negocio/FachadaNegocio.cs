@@ -64,6 +64,7 @@ namespace Negocio
         /*
          * Este es el método que se debería llamar desde Casino 
          */
+         /*
         public void RegistrarApuestas(int idJugador, List<Tuple<int, float>> apuestas)
         {
             List<int> idsApuestas = new List<int>();
@@ -79,5 +80,6 @@ namespace Negocio
                 DAOApuestas.Insertar(apuesta);
             });
         }
+        */
     }
 }
