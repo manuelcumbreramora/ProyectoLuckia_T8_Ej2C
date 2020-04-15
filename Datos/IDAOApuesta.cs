@@ -9,6 +9,7 @@ namespace Datos
     public interface IDAOApuesta
     {
         List<DTOApuesta> ListarTodasApuestas();
-        int Insertar(DTOApuesta apuesta);
+
+        /*int InsertarApuesta(DTOApuesta apuesta);*/
     }
 }
