@@ -7,9 +7,11 @@ namespace Ejercicio_T8_2C_MVC.Models
 {
     public class mJuegos
     {
-        //khj
-        public int ID { get; set; }
-        public string nombre { get; set; }
-        public string tipo { get; set; }
+       
+        public int Id { get; set; }
+
+        public String Nombre { get; set; }
+
+        public int Tipo { get; set; }
     }
 }
