@@ -25,7 +25,7 @@ namespace Ejercicio_T8_2C_MVC.Controllers
             //    listaEventos = (from b in ed.EntidadDatos
             //                     select new Models.mEventos()
             //                     {
-
+                                       //Id = b.Id,
             //                         Nombre = b.Nombre,
             //                         Fecha = b.Fecha,
             //                         Cuota = b.Cuota,
