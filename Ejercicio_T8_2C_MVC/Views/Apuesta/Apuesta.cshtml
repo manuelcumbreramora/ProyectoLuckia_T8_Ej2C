@@ -1,7 +1,50 @@
-﻿
+﻿@model List<Ejercicio_T8_2C_MVC.Models.mEventos>
 @{
     ViewBag.Title = "Apuesta";
 }
 
-<h2>Apuesta</h2>
+<h2>Apuestas</h2>
 
+<div class="row">
+
+    <div class="col-md-6">
+        <table class="table">
+            <tr>
+                <th>#</th>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Fecha</th>
+         
+            </tr>
+
+
+            @*Recojo lista para ccargar en la tabla*@
+
+            @*@foreach (var Elemento in Model)
+                        {
+                <tr>
+                    <td>@Elemento.Id</td>
+                    <td>@Elemento.Nombre</td>
+                    <td>@Elemento.Fecha</td>
+               
+
+                </tr>
+
+                        }*@
+
+
+
+        </table>
+
+
+
+
+
+    </div>
+    <div class="row" style="text-align:right;padding:5px">
+
+
+     
+        <button type="button" class="btn btn-primary pull-right" style="margin-left:10px" onclick="RealizarApuesta(document.getElementById('txtEvento').value)">Realizar Apuesta</button>
+    </div>
+</div>
