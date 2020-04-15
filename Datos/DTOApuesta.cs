@@ -10,10 +10,12 @@ namespace Datos
     {
         public int Id { get; set; }
 
-        public String Usuario { get; set; }
+        public int IdUsuario { get; set; }
 
         public DateTime Fecha { get; set; }
 
         public int IdJuego { get; set; }
+
+        public float Importe { get; set; }
     }
 }
