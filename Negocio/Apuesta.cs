@@ -11,7 +11,7 @@ namespace Negocio
     {
         public int Id { get; set; }
 
-        public String Usuario { get; set; }
+        public int IdUsuario { get; set; }
 
         public DateTime Fecha { get; set; }
 

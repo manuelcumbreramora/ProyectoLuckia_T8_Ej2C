@@ -18,7 +18,7 @@ namespace Negocio
                 listaApuestas.Add(new Apuesta
                 {
                     Id = dtoA.Id,
-                    Usuario = dtoA.Usuario,
+                    IdUsuario = dtoA.IdUsuario,
                     Fecha = dtoA.Fecha,
                     IdJuego = dtoA.IdJuego
                 });
