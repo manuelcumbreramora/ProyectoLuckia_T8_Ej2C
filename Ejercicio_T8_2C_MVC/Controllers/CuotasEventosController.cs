@@ -12,7 +12,35 @@ namespace Ejercicio_T8_2C_MVC.Controllers
         List<Models.mEventos> listaEventos;
         public ActionResult CuotaEvento()
         {
-            return View(listaEventos);
+
+
+            //Recojo datos y lo paso a presentacion
+
+            List<Models.mEventos> listaEventos;
+
+            //        using (EntidadDatos ed = new EntidadDatos()) {
+
+
+            //listaApuestas = (from b in ed.EntidadDatos
+            //                 select new Models.mEventos()
+            //                  {
+         
+            //            Nombre = b.Nombre,
+            //            Fecha = b.Fecha,
+            //            Cuota = b.Cuota,
+            //         
+            //            }).ToList();
+
+            //        }
+
+            //Esto devolvería la lista
+
+            //return View(listaEventos);
+
+
+
+
+            return View();
         }
 
        
