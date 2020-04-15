@@ -1,4 +1,4 @@
-﻿
+﻿@model List<Ejercicio_T8_2C_MVC.Models.mApuestas>
 @{
     ViewBag.Title = "Historico";
 }
@@ -20,15 +20,15 @@
             @*Recojo lista para ccargar en la tabla*@
 
             @*@foreach (var Elemento in Model)
-                {
-        <tr>
-            <td>@Elemento.Id</td>
-            <td>@Elemento.Fecha</td>
-            <td>@Elemento.Cantidad</td>
+            {
+                <tr>
+                    <td>@Elemento.Id</td>
+                    <td>@Elemento.Fecha</td>
+                    <td>@Elemento.cantidad</td>
 
-        </tr>
+                </tr>
 
-                }*@
+            }*@
 
         </table>
 
