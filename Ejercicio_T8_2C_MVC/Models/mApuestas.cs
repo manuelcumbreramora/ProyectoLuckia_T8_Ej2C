@@ -7,11 +7,12 @@ namespace Ejercicio_T8_2C_MVC.Models
 {
     public class mApuestas
     {
-        public int ID { get; set; }
-        public int? IDJugador { get; set; }
+        public int Id { get; set; }
 
-        public DateTime? fecha { get; set; }
+        public String Usuario { get; set; }
 
-        public double? cantidad { get; set; }
+        public DateTime Fecha { get; set; }
+
+        public int IdJuego { get; set; }
     }
 }
