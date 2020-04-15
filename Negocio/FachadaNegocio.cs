@@ -9,7 +9,7 @@ namespace Negocio
 {
     public class FachadaNegocio
     {
-        private IDAOApuesta DAOApuestas = new DAOApuestasImpl();
+        private IDAOApuesta DAOApuestas = new ApuestasDAO();
         public List<Apuesta> ListarApuestas()
         {
             List<Apuesta> listaApuestas = new List<Apuesta>();
@@ -26,7 +26,7 @@ namespace Negocio
             return listaApuestas;
         }
 
-        private IDAOEvento DAOEventos = new DAOEventosImpl();
+        private IDAOEvento DAOEventos = new EventosDAO();
         public List<Evento> ListarEventos()
         {
             List<Evento> listaEventos = new List<Evento>();
@@ -45,7 +45,7 @@ namespace Negocio
             return listaEventos;
         }
 
-        private IDAOJuego DAOJuegos = new DAOJuegosImpl();
+        private IDAOJuego DAOJuegos = new JuegoDAO();
         public List<Juego> ListarJuegos()
         {
             List<Juego> listaJuegos = new List<Juego>();
