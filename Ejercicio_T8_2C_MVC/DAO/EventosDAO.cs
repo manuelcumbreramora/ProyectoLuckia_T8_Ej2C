@@ -5,17 +5,17 @@ using System.Web;
 
 namespace Ejercicio_T8_2C_MVC.DAO
 {
-    public class EventosDAO : AbstractDAO
+    public class EventosDAO : AbstractDAO, IDAOEvento
     {
         public EventosDAO() { }
 
-        public List<MJuegos> getEventos()
+        public List<DTOEvento> ListarTodosEventos()
         {
-            string queryString = "SELECT ID, nombre, cuota, mercado, fecha, (SELECT ID_juego FROM juegos_eventos WHERE ID_juego = evt.ID) FROM eventos AS evt ORDER BY id ASC;";
+            string queryString = "SELECT Id, nombre, fecha, cuota, mercado, juego FROM eventos AS evt ORDER BY id ASC;";
 
             using (SqlConnection dbConnection = new SqlConnection(AbstractDAO.DB_CONNECTION_STRING))
             {
-                List<MEventos> eventosList = new List<MEventos>();
+                List<DTOEvento> eventosList = new List<DTOEvento>();
 
                 SqlCommand command = new SqlCommand(queryString, dbConnection);
                 dbConnection.Open();
@@ -23,20 +23,21 @@ namespace Ejercicio_T8_2C_MVC.DAO
                 {
                     while (reader.Read())
                     {
-                        string _ID = reader.GetInt32(0);
-                        string _nombre = reader.GetString(1);
-                        double _quota = reader.GetDouble(2);
-                        string _mercado = reader.GetString(3);
-                        DateTime _fecha = reader.GetDateTime(4);
+                        string _Id = reader.GetInt32(0);
+                        string _Nombre = reader.GetString(1);
+                        DateTime _Fecha = reader.GetDateTime(2);
+                        double _Cuota = reader.GetDouble(3);
+                        string _Mercado = reader.GetString(4);
+                        int _IdJuego = reader.GetInt32(5);
 
-                        eventosList.Add(new mEventos
+                        eventosList.Add(new DTOEvento
                         {
-                            ID = _ID, 
-                            nombre = _nombre, 
-                            cuota = _cuota, 
-                            _mercado = _mercado,
-                            fecha = _fecha,
-                            idJuego = null
+                            Id = _Id, 
+                            Nombre = _Nombre,
+                            Fecha = _Fecha,
+                            Cuota = _Cuota, 
+                            Mercado = _Mercado,
+                            IdJuego = _IdJuego
                         });
                     }
                 }

@@ -9,14 +9,15 @@ namespace Datos
     public class DTOEvento
     {
         public int Id;
-        public String Nombre { get; set; }
+
+        public string Nombre { get; set; }
         
         public DateTime Fecha { get; set; }
 
         public float Cuota { get; set; }
 
-        public String Mercado { get; set; }
+        public string Mercado { get; set; }
 
-        public int  IdJuego { get; set; }
+        public int IdJuego { get; set; }
     }
 }

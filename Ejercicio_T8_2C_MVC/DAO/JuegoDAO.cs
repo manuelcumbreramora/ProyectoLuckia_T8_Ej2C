@@ -5,17 +5,17 @@ using System.Web;
 
 namespace Ejercicio_T8_2C_MVC.DAO
 {
-    public class JuegoDAO : AbstractDAO
+    public class JuegoDAO : AbstractDAO, IDAOJuego
     {
         public JuegoDAO() { }
 
-        public List<MJuegos> getJuegos()
+        public List<DTOJuego> ListarTodosJuegos()
         {
-            string queryString = "SELECT ID, nombre, tipo FROM juegos ORDER BY id ASC;";
+            string queryString = "SELECT id, nombre, tipo FROM juegos ORDER BY id ASC;";
 
             using (SqlConnection dbConnection = new SqlConnection(AbstractDAO.DB_CONNECTION_STRING))
             {
-                List<MJuegos> juegosList = new List<MJuegos>();
+                List<DTOJuego> juegosList = new List<DTOJuego>();
 
                 SqlCommand command = new SqlCommand(queryString, dbConnection);
 
@@ -24,15 +24,15 @@ namespace Ejercicio_T8_2C_MVC.DAO
                 {
                     while (reader.Read())
                     {
-                        string _ID = reader.GetInt32(0);
-                        string _nombre = reader.GetString(1);
-                        int _tipo = reader.GetInt32(2);
+                        int _Id = reader.GetInt32(0);
+                        string _Nombre = reader.GetString(1);
+                        string _Tipo = reader.GetString(2);
 
-                        juegosList.Add(new mJuegos
+                        juegosList.Add(new DTOJuego
                         {
-                            ID = _ID,
-                            nombre = _nombre,
-                            tipo = _tipo
+                            Id = _Id,
+                            Nombre = _Nombre,
+                            Tipo = _Tipo
                         });
                     }
                 }
