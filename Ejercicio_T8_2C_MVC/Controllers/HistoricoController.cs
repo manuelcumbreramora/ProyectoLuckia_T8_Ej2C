@@ -16,27 +16,28 @@ namespace Ejercicio_T8_2C_MVC.Controllers
 
             //Recojo datos y lo paso a presentacion
 
-            //List<Models.mApuestas> listaApuestas;
+            List<Models.mApuestas> listaApuestas;
 
-            //        using (EntidadDatos ed = new EntidadDatos()) {
+            using (EntidadDatos ed = new EntidadDatos())
+            {
 
 
-            //listaApuestas = (from b in ed.EntidadDatos
-            //                 select new Models.mApuestas()
-            //                  {
+                listaApuestas = (from b in ed.EntidadDatos
+                                 select new Models.mApuestas()
+                                 {
 
-            //            Id = b.Id,
-            //            Usuario = b.Usuario,
-            //            Fecha = b.Fecha,
-            //            IdJuego = b.IdJuego,
-            //            cantidad = b.cantidad
-            //            }).ToList();
+                                     Id = b.Id,
+                                     Usuario = b.Usuario,
+                                     Fecha = b.Fecha,
+                                     IdJuego = b.IdJuego,
+                                     cantidad = b.cantidad
+                                 }).ToList();
 
-            //        }
+            }
 
             //Esto devolvería la lista
 
-            //return View(listaApuestas);
+            return View(listaApuestas);
 
             return View();
         }
